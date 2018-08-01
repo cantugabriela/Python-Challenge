@@ -1,7 +1,5 @@
 # import libraries 
-import os 
-import csv 
-
+import os, csv
 from pathlib import Path 
 
 # filepath 
@@ -21,4 +19,5 @@ with open(csv_file_path,newline="", encoding='utf-8') as budget:
         total_months = total_months + 1
         total_profit = total_profit 
     print(total_months)
+    print(total_profit)
     print(total_profit)
