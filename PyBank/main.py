@@ -2,9 +2,10 @@
 import os 
 import csv 
 
+from pathlib import Path 
+
 # filepath 
-filepath = "C:\Users\cantu\Desktop\PythonChallenge\python-challenge\PyBank"
-csv_filepath = os.path.join(filepath,"budget_data.csv")
+csv_file_path = Path('python-challenge\\Resources\\budget_data.csv')
 
 #variables
 total_months = 0 
@@ -13,7 +14,7 @@ previous_profit = 0
 profit_change = 0
 profits = []
     
-with open(csv_filepath,newline="", encoding='utf-8') as budget:
+with open(csv_file_path,newline="", encoding='utf-8') as budget:
     csvreader = csv.reader(budget,delimiter=",")   
 
     for row in csvreader: 
