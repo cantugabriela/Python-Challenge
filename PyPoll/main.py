@@ -87,7 +87,9 @@ with open(output_file,"w") as file:
     file.write("\n")
     file.write(f"----------------------------")
     file.write("\n")
-    print(f"----------------------------")
+    file.write(f"Winner: {key}")
+    file.write("\n")
+    file.write(f"----------------------------")
 
 
 
