@@ -51,19 +51,19 @@ key = max(dict_candidates_and_votes, key=dict_candidates_and_votes.get)
 # Print a the summary of the analysis
 
 khan_percent = (khan_votes/total_votes) *100
-correy_percent = (correy_votes/total_votes) * 100
-li_percent = (li_votes/total_votes)* 100
-otooley_percent = (otooley_votes/total_votes) * 100
+correy_percent = round(((correy_votes/total_votes) * 100), 3)
+li_percent = round(((li_votes/total_votes)* 100), 3)
+otooley_percent = round(((otooley_votes/total_votes) * 100),3)
 
-
+# Print the summary table
 print(f"Election Results")
 print(f"----------------------------")
 print(f"Total Votes: {total_votes}")
 print(f"----------------------------")
-print(f"Khan: {round(khan_percent,3)}% ({khan_votes} )")
-print(f"Correy: {round(correy_percent,3)}% ({correy_votes} )")
-print(f"Li: {round(li_percent,3)}% ({li_votes})")
-print(f"O'Tooley: {round(otooley_percent,3)}% ({otooley_votes})")
+print(f"Khan: {khan_percent:.3f}% ({khan_votes})")
+print(f"Correy: {correy_percent:.3f}% ({correy_votes})")
+print(f"Li: {li_percent:.3f}% ({li_votes})")
+print(f"O'Tooley: {otooley_percent:.3f}% ({otooley_votes})")
 print(f"----------------------------")
 print(f"Winner: {key}")
 print(f"----------------------------")
@@ -72,18 +72,22 @@ print(f"----------------------------")
 #Output files
 
 with open(output_file,"w") as file:
-#Some methods
+##Write methods to print to Elections_Results_Summary 
     file.write(f"Election Results")
     file.write("\n")
     file.write(f"----------------------------")
     file.write("\n")
-    file.write(f"Khan: {round(khan_percent,3)}% ({khan_votes} )")
+    file.write(f"Total Votes: {total_votes}")
     file.write("\n")
-    file.write(f"Correy: {round(correy_percent,3)}% ({correy_votes} )")
+    file.write(f"----------------------------")
     file.write("\n")
-    file.write(f"Li: {round(li_percent,3)}% ({li_votes})")
+    file.write(f"Khan: {khan_percent:.3f}% ({khan_votes})")
     file.write("\n")
-    file.write(f"O'Tooley: {round(otooley_percent,3)}% ({otooley_votes})")
+    file.write(f"Correy: {correy_percent:.3f}% ({correy_votes})")
+    file.write("\n")
+    file.write(f"Li: {li_percent:.3f}% ({li_votes})")
+    file.write("\n")
+    file.write(f"O'Tooley: {otooley_percent:.3f}% ({otooley_votes})")
     file.write("\n")
     file.write(f"----------------------------")
     file.write("\n")

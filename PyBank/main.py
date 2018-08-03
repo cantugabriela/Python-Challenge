@@ -71,7 +71,7 @@ print(f"Greatest Decrease in Profits: {max_dec} (${(str(max_decrease))})")
 #Output files
 
 with open(output_file,"w") as file:
-#Some methods
+#Write methods to print to Financial_Analysis_Summary 
     file.write("Financial Analysis")
     file.write("\n")
     file.write("----------------------------")
