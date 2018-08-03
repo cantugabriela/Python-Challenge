@@ -10,6 +10,8 @@ li_votes = 0
 otooley_votes = 0
 # Assign file location with the pathlib library
 csv_file_path = Path("python-challenge\\PyPoll\\election_data.csv")
+output_file = Path("python-challenge\\PyPoll\\Election_Results_Summary.txt")
+
 
 # Open csv in default read mode with context manager
 with open(csv_file_path,newline="", encoding='utf-8') as elections:
@@ -52,14 +54,40 @@ khan_percent = (khan_votes/total_votes) *100
 correy_percent = (correy_votes/total_votes) * 100
 li_percent = (li_votes/total_votes)* 100
 otooley_percent = (otooley_votes/total_votes) * 100
+
+
 print(f"Election Results")
 print(f"----------------------------")
 print(f"Total Votes: {total_votes}")
 print(f"----------------------------")
-print(f"Khan: {round(khan_percent,000)}% ({khan_votes} )")
+print(f"Khan: {round(khan_percent,3)}% ({khan_votes} )")
 print(f"Correy: {round(correy_percent,3)}% ({correy_votes} )")
 print(f"Li: {round(li_percent,3)}% ({li_votes})")
 print(f"O'Tooley: {round(otooley_percent,3)}% ({otooley_votes})")
 print(f"----------------------------")
 print(f"Winner: {key}")
 print(f"----------------------------")
+
+
+#Output files
+
+with open(output_file,"w") as file:
+#Some methods
+    file.write(f"Election Results")
+    file.write("\n")
+    file.write(f"----------------------------")
+    file.write("\n")
+    file.write(f"Khan: {round(khan_percent,3)}% ({khan_votes} )")
+    file.write("\n")
+    file.write(f"Correy: {round(correy_percent,3)}% ({correy_votes} )")
+    file.write("\n")
+    file.write(f"Li: {round(li_percent,3)}% ({li_votes})")
+    file.write("\n")
+    file.write(f"O'Tooley: {round(otooley_percent,3)}% ({otooley_votes})")
+    file.write("\n")
+    file.write(f"----------------------------")
+    file.write("\n")
+    print(f"----------------------------")
+
+
+
