@@ -48,13 +48,18 @@ key = max(dict_candidates_and_votes, key=dict_candidates_and_votes.get)
 
 # Print a the summary of the analysis
 
-print(total_votes)
-print(khan_votes)
-print(((khan_votes/total_votes)*100))
-print(correy_votes)
-print((correy_votes/total_votes)*100)
-print(li_votes)
-print((li_votes/total_votes)*100)
-print(otooley_votes)
-print((otooley_votes/total_votes)*100)
-print(key)
+khan_percent = (khan_votes/total_votes) *100
+correy_percent = (correy_votes/total_votes) * 100
+li_percent = (li_votes/total_votes)* 100
+otooley_percent = (otooley_votes/total_votes) * 100
+print(f"Election Results")
+print(f"----------------------------")
+print(f"Total Votes: {total_votes}")
+print(f"----------------------------")
+print(f"Khan: {round(khan_percent,000)}% ({khan_votes} )")
+print(f"Correy: {round(correy_percent,3)}% ({correy_votes} )")
+print(f"Li: {round(li_percent,3)}% ({li_votes})")
+print(f"O'Tooley: {round(otooley_percent,3)}% ({otooley_votes})")
+print(f"----------------------------")
+print(f"Winner: {key}")
+print(f"----------------------------")
