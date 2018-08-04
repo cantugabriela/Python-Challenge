@@ -5,8 +5,7 @@ from pathlib import Path
 # Assign file location with the pathlib library
 csv_file_path = Path("python-challenge", "PyPoll", "election_data.csv")
 
-
-#Declare Variables 
+# Declare Variables 
 total_votes = 0 
 khan_votes = 0
 correy_votes = 0
@@ -14,12 +13,12 @@ li_votes = 0
 otooley_votes = 0
 
 # Open csv in default read mode with context manager
-with open(csv_file_path,newline="", encoding='utf-8') as elections:
+with open(csv_file_path,newline="", encoding="utf-8") as elections:
 
     # Store data under the csvreader variable
     csvreader = csv.reader(elections,delimiter=",") 
 
-    #Skip the header so we iterate through the actual values
+    # Skip the header so we iterate through the actual values
     header = next(csvreader)     
 
     # Iterate through each row in the csv
@@ -43,14 +42,12 @@ with open(csv_file_path,newline="", encoding='utf-8') as elections:
 candidates = ["Khan", "Correy", "Li","O'Tooley"]
 votes = [khan_votes, correy_votes,li_votes,otooley_votes]
 
-
 # We zip them together the list of candidate(key) and the total votes(value)
 # Return the winner using a max function of the dictionary 
 dict_candidates_and_votes = dict(zip(candidates,votes))
 key = max(dict_candidates_and_votes, key=dict_candidates_and_votes.get)
 
 # Print a the summary of the analysis
-
 khan_percent = (khan_votes/total_votes) *100
 correy_percent = (correy_votes/total_votes) * 100
 li_percent = (li_votes/total_votes)* 100
@@ -69,14 +66,13 @@ print(f"----------------------------")
 print(f"Winner: {key}")
 print(f"----------------------------")
 
-#Output files
-
+# Output files
 # Assign output file location and with the pathlib library
 output_file = Path("python-challenge", "PyPoll", "Election_Results_Summary.txt")
 
 with open(output_file,"w") as file:
 
-#Write methods to print to Elections_Results_Summary 
+# Write methods to print to Elections_Results_Summary 
     file.write(f"Election Results")
     file.write("\n")
     file.write(f"----------------------------")
