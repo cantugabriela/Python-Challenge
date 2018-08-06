@@ -14,7 +14,6 @@ date_of_birth = []
 d_o_b = []
 ssn = []
 ssn_private = []
-state = []
 abbrev = []
 employee_id = []
 
@@ -112,7 +111,7 @@ with open(csv_file_path,newline="", encoding='utf-8') as employee_data:
 new_df = pd.DataFrame({"Employee Id": employee_id, "First Name": first_name, "Last Name": last_name, "DOB": d_o_b, "SSN":ssn_private, "State": abbrev})
 
 # Export new_df to csv, use .join method so it works on in different operating systems
-new_df.to_csv(Path("python-challenge", "PyBoss(Bonus)", "employee_data_reformatted.csv"))
+new_df.to_csv(Path("python-challenge", "PyBoss(Bonus)", "employee_data_reformatted.csv"), index=False, header=True)
 
 # Print sample data 
 print(new_df.head())
