@@ -4,7 +4,7 @@ import pandas as pd
 from pathlib import Path 
 
 # Input file path 
-csv_file_path = Path("python-challenge", "PyBoss", "employee_data.csv")
+csv_file_path = Path("python-challenge", "PyBoss(Bonus)", "employee_data.csv")
 
 # Declare Variables ( empty lists)
 full_name = []
@@ -104,21 +104,15 @@ with open(csv_file_path,newline="", encoding='utf-8') as employee_data:
         ssn = row[3].split("-")
         ssn_private.append("***-**-" + ssn[2])
 
-        # Append state
-        state.append(row[4])
-
-    # Match the state list item to a dictionary value, if they match, append dictionary key to list abbrev
-    for i in state:
-        for key in us_state_abbrev:
-            if i == key: 
-                abbrev.append(us_state_abbrev[key])
+        # Match the state list item to a dictionary value, if they match, append dictionary key to list abbrev
+        abbrev.append(us_state_abbrev[row[4]])
 
 # Use pandas library to create Data Frame Object 
 # Keys replace orignal headers, values are the lists created 
 new_df = pd.DataFrame({"Employee Id": employee_id, "First Name": first_name, "Last Name": last_name, "DOB": d_o_b, "SSN":ssn_private, "State": abbrev})
 
 # Export new_df to csv, use .join method so it works on in different operating systems
-new_df.to_csv(Path("python-challenge", "PyBoss", "employee_data_reformatted.csv"))
+new_df.to_csv(Path("python-challenge", "PyBoss(Bonus)", "employee_data_reformatted.csv"))
 
 # Print sample data 
 print(new_df.head())
