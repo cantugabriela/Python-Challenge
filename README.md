@@ -46,4 +46,18 @@ The required conversions are as follows:
 
 * The State data should be re-written as simple two-letter abbreviations.
 
+## PyParagraph(Bonus)
 
+Python script to automate the analysis of passages. The script does the following:
+
+Import a text file filled with a paragraph of your choosing.
+
+Assess the passage for each of the following:
+
+* Approximate word count
+
+* Approximate sentence count
+
+* Approximate letter count (per word)
+
+* Average sentence length (in words)
